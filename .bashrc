@@ -74,30 +74,32 @@
 
 # OS specific settings
 
-  if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
 
-    # Adding relevant (bin) directories to $PATH
-    # THE LOWER THE HIGHER ON THE $PATH LIST
-      # Node.js stuff
-      export PATH="/usr/local/share/npm/bin:$PATH"
-      export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
-      # Adding ~/GoogleDrive/SHARED/bin
-      export PATH="$HOME/GoogleDrive/SHARED/bin:$PATH"
-      # Adding /usr/local/sbin
-      export PATH="/usr/local/sbin:$PATH"
-      # Adding /usr/local/bin
-      export PATH="/usr/local/bin:$PATH"
+  # Adding relevant (bin) directories to $PATH
+  # THE LOWER THE HIGHER ON THE $PATH LIST
+    # Node.js stuff
+    export PATH="/usr/local/share/npm/bin:$PATH"
+    export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+    # Adding ~/GoogleDrive/SHARED/bin
+    export PATH="$HOME/GoogleDrive/SHARED/bin:$PATH"
+    # Adding /usr/local/sbin
+    export PATH="/usr/local/sbin:$PATH"
+    # Adding /usr/local/bin
+    export PATH="/usr/local/bin:$PATH"
 
-    # Enable colored terminal for Mac OSX
-    export CLICOLOR=1
-    export LSCOLORS=GxFxCxDxBxegedabagaced
-    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  # Enable colored terminal for Mac OSX
+  export CLICOLOR=1
+  export LSCOLORS=GxFxCxDxBxegedabagaced
+  export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-    # VirtualEnvWrapper Setup
-    export WORKON_HOME="$HOME/GoogleDrive/DEV/.virtualenvs"
-    if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-        source /usr/local/bin/virtualenvwrapper.sh
-    fi
+  # VirtualEnvWrapper Setup
+  export WORKON_HOME="$HOME/GoogleDrive/DEV/.virtualenvs"
+  if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+      source /usr/local/bin/virtualenvwrapper.sh
+  fi
+
+fi
 
 # PALETTE="#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
 # BG_COLOR="#00002B2B3636"
