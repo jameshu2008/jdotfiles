@@ -208,7 +208,7 @@ else
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
     endif
-    let g:airline_symbols.space = "\ua0"
+    " let g:airline_symbols.space = "\ua0"
     " let g:airline_left_sep          = '>'
     " let g:airline_left_alt_sep      = '>'
     " let g:airline_right_sep         = '<'
@@ -286,10 +286,10 @@ map k gk
 map <silent> <leader><leader> :noh<cr>
 
 " Smart way to move between windows
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Open splits in a more natural way
 set splitbelow
@@ -425,7 +425,6 @@ set pastetoggle=<F2>
 set foldmethod=indent
 set foldlevel=99
 
-map <leader>n :NERDTreeToggle<CR>
 
 " More syntax highlighting.
 let python_highlight_all = 1
@@ -483,6 +482,12 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ -g ""'
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" NerdTree
+nmap <leader>a :NERDTreeToggle<CR>
+
+" Tagbar
+nmap <leader>; :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
