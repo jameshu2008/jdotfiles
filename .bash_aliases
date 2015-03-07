@@ -17,8 +17,6 @@
   alias queries='gdqueries'
   alias script='gdscript'
 
-  alias project='gdproject'
-
   alias chmodgd='chmod -R 770 $gdoutput $gdscript'
   alias chmodcns='fileutil chmod -R 770 $cns'
 
