@@ -1,0 +1,48 @@
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+# attrcolor b ".I"
+
+# tell screen how to set colors. AB = background, AF=foreground
+# termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# erase background with current bg color
+# defbce "on"
+
+hardstatus alwayslastline '%{= kG}[ %{G}%H | %{=kw}%?%-Lw%?%{g}%n*%f%t%?(%u)%? %{g}]%{w}%?%+Lw%?%?%=%{g}[ %{K}%l %{g}][ %{B}%Y-%m-%d %{W    }%c %{g}]'
+defscrollback 1000000
+startup_message off
+autodetach on
+# escape ^Zz    # Save Ctrl-A for bash
+escape ^Ff
+termcapinfo xterm* ti@:te@    # For mouse scroll
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+altscreen on    # Clear screen after quitting vim
+term screen-256color
+
+bind R eval "source ~/.screenrc"
+
+# Define C-a+r for resize MODE
+# bind r eval "command -c classresize" # enter resize mode
+# use hjkl keys to resize regions
+# bind -c classresize h eval "resize -h -5" "command -c classresize"
+# bind -c classresize j eval "resize -v -5" "command -c classresize"
+# bind -c classresize k eval "resize -v +5" "command -c classresize"
+# bind -c classresize l eval "resize -h +5" "command -c classresize"
+
+bind H eval "resize -h -5"
+bind J eval "resize -v -5"
+bind K eval "resize -v +5"
+bind L eval "rezize -h +5"
+
+bind h focus left
+bind j focus down
+bind k focus up
+bind l focus right
+
+bind k focus up
+
+# bindkey ^Hh focus left
+# bindkey "^[J" focus down
+# bindkey "^[K"  focus up
+# bindkey ^Ll focus right
+

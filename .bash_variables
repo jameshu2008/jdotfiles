@@ -1,0 +1,7 @@
+# Google Drive SHARED Directories
+export gds=~/GoogleDrive/SHARED
+export gdsbin=~/GoogleDrive/SHARED/bin
+export gdsdotfiles=~/GoogleDrive/SHARED/dotfiles
+export gdsnotes=~/GoogleDrive/SHARED/NOTES
+export gdsproject=~/GoogleDrive/SHARED/PROJECT
+export gdssandbox=~/GoogleDrive/SHARED/SANDBOX
