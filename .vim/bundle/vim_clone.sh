@@ -23,7 +23,7 @@ rm -Ri  vim-surround
 git clone https://github.com/mileszs/ack.vim.git ack.vim
 git clone https://github.com/Raimondi/delimitMate.git delimitMate
 git clone https://github.com/mattn/emmet-vim.git emmet-vim
-git clone https://github.com/sjl/gundo.vim.gi://github.com/sjl/gundo.vim.git gundo.vim
+git clone https://github.com/sjl/gundo.vim.git gundo.vim
 git clone https://github.com/scrooloose/nerdtree.git nerdtree
 git clone https://github.com/ervandew/supertab.git supertab
 git clone https://github.com/majutsushi/tagbar.git tagbar
