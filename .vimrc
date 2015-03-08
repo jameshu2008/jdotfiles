@@ -63,6 +63,9 @@ set ttyfast
 " Auto reload/resource .vimrc after each write/sav
 autocmd! bufwritepost .vimrc source %
 
+" no more netrwhist
+:let g:netrw_dirhistmax = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
