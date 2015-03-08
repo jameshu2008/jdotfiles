@@ -18,8 +18,7 @@ bash bash-osx-InitialSetup.sh
 Download and refresh vim plugins.
 ```
 cd ~/jdotfiles
-git submodule foreach git submodule init
-git submodule foreach git submodule update
+git submodule update --init --recursive
 ```
 
 ### SSH Access to GitHub
