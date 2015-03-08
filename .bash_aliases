@@ -48,7 +48,7 @@ alias vbashrc='vim "$jdotfiles"/.bashrc'
 alias vbasha='vim "$jdotfiles"/.bash_aliases'
 alias vbashv='vim "$jdotfiles"/.bash_variables'
 alias vtmx='vim "$jdotfiles"/.tmux.conf'
-alias vgitc='vim "$jdotfiles"/.gitconfig'
+alias vgit='vim "$jdotfiles"/.gitconfig'
 alias vgiti='vim "$jdotfiles"/.gitignore_global'
 
 # alias top='atop'
