@@ -55,3 +55,18 @@
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/tcomment"]
+	path = .vim/bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule ".vim/bundle/theme_vim"]
+	path = .vim/bundle/theme_vim
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/snipmate_vim"]
+	path = .vim/bundle/snipmate_vim
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/indent-guides"]
+	path = .vim/bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
