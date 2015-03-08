@@ -4,21 +4,22 @@ rm -Ri ack.vim
 rm -Ri delimitMate
 rm -Ri emmet-vim
 rm -Ri gundo.vim
-rm -Ri  nerdtree
-rm -Ri  supertab
-rm -Ri  tagbar
-rm -Ri  tcomment_vim
-rm -Ri  theme_molokai
-rm -Ri  theme_tomorrow
-rm -Ri  theme_vim-colors-solarized
-rm -Ri  vim-airline
-rm -Ri  vim-fugitive
-rm -Ri  vim-repeat
-rm -Ri  vim-snipmate
-rm -Ri  vim-snipmate_tlib_vim
-rm -Ri  vim-snipmate_vim-addon-mw-utils
-rm -Ri  vim-snipmate_vim-snippets
-rm -Ri  vim-surround
+rm -Ri nerdtree
+rm -Ri supertab
+rm -Ri tagbar
+rm -Ri tcomment_vim
+rm -Ri theme_molokai
+rm -Ri theme_tomorrow
+rm -Ri theme_vim-colors-solarized
+rm -Ri vim-airline
+rm -Ri vim-fugitive
+rm -Ri vim-repeat
+rm -Ri vim-snipmate
+rm -Ri vim-snipmate_tlib_vim
+rm -Ri vim-snipmate_vim-addon-mw-utils
+rm -Ri vim-snipmate_vim-snippets
+rm -Ri vim-surround
+rm -Ri syntastic
 
 git clone https://github.com/mileszs/ack.vim.git ack.vim
 git clone https://github.com/Raimondi/delimitMate.git delimitMate
@@ -39,3 +40,4 @@ git clone https://github.com/tomtom/tlib_vim.git vim-snipmate_tlib_vim
 git clone https://github.com/MarcWeber/vim-addon-mw-utils.git vim-snipmate_vim-addon-mw-utils
 git clone https://github.com/honza/vim-snippets.git vim-snipmate_vim-snippets
 git clone https://github.com/tpope/vim-surround.git vim-surround
+git clone https://github.com/scrooloose/syntastic.git syntastic
