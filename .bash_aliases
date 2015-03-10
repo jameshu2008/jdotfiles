@@ -6,9 +6,8 @@
   alias rmr='rm -ir'
 
 # Mine
-  # Quick Access & Actions
+  # Shorthands
   alias shared='gds'
-
   alias notes='gdsnotes'
   alias takenote='gdsnotes && vim'
   alias bin='gdsbin'
@@ -16,16 +15,17 @@
   alias queries='gdqueries'
   alias script='gdscript'
 
-  alias chmodgd='chmod -R 770 $gdoutput $gdscript'
-  alias chmodcns='fileutil chmod -R 770 $cns'
-
-  # Print some critial environment variables
-  alias printpath='echo $PATH'
-  alias printterm='echo $TERM'
-  alias printshell='echo $SHELL'
+  # Edit dotfiles
+  alias jdot='cd "$jdotfiles" && ll'
+  alias vbashrc='vim "$jdotfiles"/.bashrc'
+  alias vbasha='vim "$jdotfiles"/.bash_aliases'
+  alias vbashv='vim "$jdotfiles"/.bash_variables'
+  alias vtmx='vim "$jdotfiles"/.tmux.conf'
+  alias vgit='vim "$jdotfiles"/.gitconfig'
+  alias vgiti='vim "$jdotfiles"/.gitignore_global'
 
   # Homebrew
-  # alias brewdoctor='brew update && brew doctor'
+
   # Productivity
   alias hgrep='history | grep'
 
@@ -38,21 +38,11 @@ alias j='jobs -l'
 alias mkdir='mkdir -pv'
 alias mount='mount |column -t'
 alias path='echo -e ${PATH//:/\\n}'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 alias ports='netstat -tulanp'
 alias rcb='R CMD BATCH'
-
-alias jdotfiles='cd "$jdotfiles" && ll'
-alias vbashrc='vim "$jdotfiles"/.bashrc'
-alias vbasha='vim "$jdotfiles"/.bash_aliases'
-alias vbashv='vim "$jdotfiles"/.bash_variables'
-alias vtmx='vim "$jdotfiles"/.tmux.conf'
-alias vgit='vim "$jdotfiles"/.gitconfig'
-alias vgiti='vim "$jdotfiles"/.gitignore_global'
-
-# alias top='atop'
 alias wget='wget -c'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # Navigational
 alias ~='cd ~'
@@ -94,7 +84,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias vi="mvim -v" # CRITICAL
     alias vim="mvim -v" # CRITICAL
 
-
     alias vimb='cd ~/.vim/bundle'
     alias vimruntime='cd /usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
 
@@ -111,12 +100,7 @@ alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
 alias shutdown='sudo /sbin/shutdown'
 
-# Time
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%y"'
-
-# System (info)
+# System Info
 alias meminfo='free -m -l -t'
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
@@ -125,13 +109,11 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
-# this one saved by butt so many times ##
-# alias ff4='/opt/firefox4/firefox'
-# alias ff13='/opt/firefox13/firefox'
-# alias chrome='/opt/google/chrome/chrome'
-# alias opera='/opt/opera/opera'
-# alias ff=ff13
-# alias browser=chrome
+# Time
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%y"'
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
