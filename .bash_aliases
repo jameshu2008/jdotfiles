@@ -21,10 +21,10 @@
   alias vbasha='vim "$jdotfiles"/.bash_aliases'
   alias vbashv='vim "$jdotfiles"/.bash_variables'
   alias vtmx='vim "$jdotfiles"/.tmux.conf'
-  alias vgit='vim "$jdotfiles"/.gitconfig'
+  alias vgit='vim ./.git/config'
+  alias vgitgc='vim "$jdotfiles"/.gitconfig'
   alias vgiti='vim "$jdotfiles"/.gitignore_global'
-
-  # Homebrew
+  alias vssh='vim "$jdotfiles"/.ssh/config'
 
   # Productivity
   alias hgrep='history | grep'
