@@ -80,9 +80,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # alias mvim="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
     # alias vi="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
     # alias vim="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
-    alias mvim="mvim -v" # CRITICAL
-    alias vi="mvim -v" # CRITICAL
-    alias vim="mvim -v" # CRITICAL
+    # alias mvim="mvim -v" # CRITICAL
+    # alias vi="mvim -v" # CRITICAL
+    # alias vim="mvim -v" # CRITICAL
 
     alias vimb='cd ~/.vim/bundle'
     alias vimruntime='cd /usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
