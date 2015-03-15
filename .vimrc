@@ -474,6 +474,7 @@ endif
 " => Plugin Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
       \ --ignore .svn
