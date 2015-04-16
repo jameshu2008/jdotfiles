@@ -43,6 +43,7 @@ alias rcb='R CMD BATCH'
 alias wget='wget -c'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
 
 # Navigational
 alias ~='cd ~'
