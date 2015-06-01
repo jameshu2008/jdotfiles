@@ -11,6 +11,7 @@
   alias notes='gdsnotes'
   alias takenote='gdsnotes && vim'
   alias bin='gdsbin'
+  alias lib='gdslib'
   alias sandbox='gdssandbox'
   alias queries='gdqueries'
   alias script='gdscript'
@@ -56,6 +57,7 @@ alias gdsbin='cd "$gdsbin" && ll'
 alias gdsdotfiles='cd "$gdsdotfiles" && ll'
 alias gdsnotes='cd "$gdsnotes" && ll'
 alias gdsproject='cd "$gdsproject" && ll'
+alias gdslib='cd "$gdslib" && ll'
 alias gdssandbox='cd "$gdssandbox" && ll'
 
 # GREP

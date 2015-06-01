@@ -5,5 +5,6 @@ export gdsdotfiles=~/GoogleDrive/SHARED/dotfiles
 export gdsnotes=~/GoogleDrive/SHARED/NOTES
 export gdsproject=~/GoogleDrive/SHARED/PROJECT
 export gdssandbox=~/GoogleDrive/SHARED/SANDBOX
+export gdslib=~/GoogleDrive/SHARED/LIB
 
 export jdotfiles=~/jdotfiles
