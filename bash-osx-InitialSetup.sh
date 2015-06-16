@@ -93,3 +93,11 @@ else
     echo "~/.gitconfig soft-linked unsuccessfully"
 fi
 
+# Creating symbolic links for npm configs
+if [ -f ~/jdotfiles/.npmrc ];
+then
+    ln -s ~/jdotfiles/.npmrc ~/.npmrc
+    echo "~/.npmrc soft-linked successfully"
+else
+    echo "~/.npmrc soft-linked unsuccessfully"
+fi

@@ -76,11 +76,16 @@
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 
+  # npm global packages location
+  export NPM_PACKAGES="${HOME}/.npm-global-packages"
+
   # Adding relevant (bin) directories to $PATH
   # THE LOWER THE HIGHER ON THE $PATH LIST
     # Node.js stuff
     export PATH="/usr/local/share/npm/bin:$PATH"
-    export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+    export PATH="$NPM_PACKAGES/bin:$PATH"
+    export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+    # export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
     # Adding ~/GoogleDrive/SHARED/bin
     export PATH="$HOME/GoogleDrive/SHARED/bin:$PATH"
     # Adding /usr/local/sbin
