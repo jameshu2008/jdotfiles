@@ -36,6 +36,7 @@ syntax on
 
 " default to python3
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_disabled_filetypes = '*'
 
 " Self-defined filetypes
 autocmd BufRead,BufNewFile *.less setfiletype css
