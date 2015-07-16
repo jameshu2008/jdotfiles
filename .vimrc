@@ -14,11 +14,14 @@ call pathogen#helptags()
 call pathogen#surround(expand('~/jdotfiles/.vim/bundles/{}'))
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Source work-related vim settings
+" => Google Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable(glob("~/GoogleDrive/gdotfiles/.vimrc"))
   source ~/GoogleDrive/gdotfiles/.vimrc
 endif
+" if filereadable(glob("/usr/share/vim/google/google.vim"))
+"   source /usr/share/vim/google/google.vim
+" endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -492,6 +495,9 @@ nmap <leader>a :NERDTreeToggle<CR>
 
 " Tagbar
 nmap <leader>; :TagbarToggle<CR>
+
+" Syntastic
+let g:syntastic_python_checkers = ['gpylint']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

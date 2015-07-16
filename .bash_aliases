@@ -28,6 +28,7 @@
 
   # Productivity
   alias hgrep='history | grep'
+  alias fgrep='find . -type f -print0 | xargs -0 grep'
 
 # General Commands
 alias c='clear'
