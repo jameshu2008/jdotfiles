@@ -13,6 +13,7 @@ rm -Rf theme_tomorrow
 rm -Rf theme_vim-colors-solarized
 rm -Rf airline
 rm -Rf fugitive
+rm -Rf gitgutter
 rm -Rf repeat
 rm -Rf snipmate
 rm -Rf snipmate_tlib_vim
@@ -35,6 +36,7 @@ git submodule add --force https://github.com/chriskempson/tomorrow-theme.git the
 git submodule add --force https://github.com/altercation/vim-colors-solarized.git theme_vim
 git submodule add --force https://github.com/bling/vim-airline.git airline
 git submodule add --force https://github.com/tpope/vim-fugitive.git fugitive
+git submodule add --force https://github.com/airblade/vim-gitgutter.git gitgutter
 git submodule add --force https://github.com/tpope/vim-repeat repeat
 git submodule add --force https://github.com/garbas/vim-snipmate.git snipmate
 git submodule add --force https://github.com/tomtom/tlib_vim.git snipmate_tlib_vim
