@@ -13,6 +13,7 @@
   alias bin='gdsbin'
   alias lib='gdslib'
   alias sandbox='gdssandbox'
+  alias spy='cd "$gdssandboxpython" && ll'
   alias queries='gdqueries'
   alias script='gdscript'
 
@@ -59,6 +60,7 @@ alias gdsnotes='cd "$gdsnotes" && ll'
 alias gdsproject='cd "$gdsproject" && ll'
 alias gdslib='cd "$gdslib" && ll'
 alias gdssandbox='cd "$gdssandbox" && ll'
+alias gdssandboxpython='cd "$gdssandboxpython" && ll'
 
 # GREP
 alias grep='grep'
