@@ -430,6 +430,7 @@ set pastetoggle=<F2>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldmethod=indent
 set foldlevel=99
+set foldignore=
 
 
 " More syntax highlighting.
