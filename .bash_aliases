@@ -11,6 +11,7 @@
   alias notes='gdsnotes'
   alias takenote='gdsnotes && vim'
   alias bin='gdsbin'
+  alias dev='gddev'
   alias lib='gdslib'
   alias sandbox='gdssandbox'
   alias spy='cd "$gdssandboxpython" && ll'
