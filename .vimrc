@@ -57,7 +57,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Remove/reduce the lag in VIM & TMUX
-set ttyfast
+" set ttyfast
 
 " Change the trigger for vim-snipmate
 " imap <C-\> <Plug>snipMateNextOrTrigger
@@ -289,7 +289,7 @@ map k gk
 " map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><leader> :noh<cr>
+map <silent> <leader>c :noh<cr>
 
 " Smart way to move between windows
 nnoremap <C-J> <C-W><C-J>
@@ -404,13 +404,13 @@ map Y y$
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+" map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+" map <leader>sn ]s
+" map <leader>sp [s
+" map <leader>sa zg
+" map <leader>s? z=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
@@ -422,7 +422,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-" map <leader>pp :setlocal paste!<cr>
+map <leader>p :setlocal paste!<cr>
 set pastetoggle=<F2>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -431,7 +431,7 @@ set pastetoggle=<F2>
 set foldmethod=indent
 set foldlevel=99
 set foldignore=
-
+map <leader>t za
 
 " More syntax highlighting.
 let python_highlight_all = 1
