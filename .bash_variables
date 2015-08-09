@@ -1,3 +1,6 @@
+# Google Drive Directories
+export gddev=~/GoogleDrive/DEV
+
 # Google Drive SHARED Directories
 export gds=~/GoogleDrive/SHARED
 export gdsbin=~/GoogleDrive/SHARED/bin

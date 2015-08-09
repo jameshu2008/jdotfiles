@@ -55,6 +55,8 @@ alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
 
+alias gddev='cd "$gddev" && ll'
+
 alias gds='cd "$gds" && ll'
 alias gdsbin='cd "$gdsbin" && ll'
 alias gdsdotfiles='cd "$gdsdotfiles" && ll'
