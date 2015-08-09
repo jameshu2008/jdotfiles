@@ -39,6 +39,7 @@ syntax on
 
 " default to python3
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_disabled_filetypes = '*'
 
 " Self-defined filetypes
 autocmd BufRead,BufNewFile *.less setfiletype css
@@ -472,7 +473,15 @@ else
     augroup END
 endif
 
-
+" Reverse Letters (from vim.org)
+vnoremap <silent> <Leader>is :<C-U>let old_reg_a=@a<CR>
+ \:let old_reg=@"<CR>
+ \gv"ay
+ \:let @a=substitute(@a, '.\(.*\)\@=',
+ \ '\=@a[strlen(submatch(1))]', 'g')<CR>
+ \gvc<C-R>a<Esc>
+ \:let @a=old_reg_a<CR>
+ \:let @"=old_reg<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin Configs
