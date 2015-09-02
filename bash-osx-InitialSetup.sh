@@ -81,11 +81,7 @@ else
 fi
 
 # Creating symbolic links for git configurations
-if [ -f ~/GoogleDrive/gdotfiles/.gitconfig ];
-then
-    ln -s ~/jdotfiles/.gitconfig ~/.gitconfig
-    echo "~/.gitconfig soft-linked successfully"
-elif [ -f ~/jdotfiles/.gitconfig ];
+if [ -f ~/jdotfiles/.gitconfig ];
 then
     ln -s ~/jdotfiles/.gitconfig ~/.gitconfig
     echo "~/.gitconfig soft-linked successfully"
