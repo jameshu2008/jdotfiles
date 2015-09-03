@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Remove all the symbolic links in place
+# STEP 0
+# Before running this script, please make sure GoogleDrive is properly
+# configured. The folder name must be "GoogleDrive" with NO space.
+
+# Remove all the existing symlinks.
 rm -ir ~/.bash*
 rm -ir ~/.vim*
 rm -ir ~/.inputrc
@@ -97,3 +101,14 @@ then
 else
     echo "~/.npmrc soft-linked unsuccessfully"
 fi
+
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install pip
+# Don't forget to install required packages.
+sudo easy_install pip
+sudo easy_install pip3
+
+# Copy over ssh credentials from GoogleDrive
+cp ~/GoogleDrive/SHARED/SETTINGS/ssh_laptop/* ~/.ssh
