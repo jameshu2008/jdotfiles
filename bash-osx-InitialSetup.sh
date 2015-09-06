@@ -102,8 +102,12 @@ else
     echo "~/.npmrc soft-linked unsuccessfully"
 fi
 
-# Install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Source bash
+bash
+
+# Populate vim plugins, as described jdotfiles/.gitmodules.
+jdot
+git submodule update --init --recursive
 
 # Install pip
 # Don't forget to install required packages.
@@ -113,4 +117,9 @@ sudo easy_install pip3
 # Copy over ssh credentials from GoogleDrive
 cp ~/GoogleDrive/SHARED/SETTINGS/ssh_laptop/* ~/.ssh
 
-#
+# Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Brew Installs
+brew install vim
+brew install homebrew/dupes/screen

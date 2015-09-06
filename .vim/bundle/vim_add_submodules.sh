@@ -45,3 +45,4 @@ git submodule add --force https://github.com/honza/vim-snippets.git snipmate_vim
 git submodule add --force https://github.com/tpope/vim-surround.git surround
 git submodule add --force https://github.com/scrooloose/syntastic.git syntastic
 git submodule add --force https://github.com/nathanaelkane/vim-indent-guides.git indent-guides
+git submodule add --force https://github.com/vim-scripts/matchit.zip.git
