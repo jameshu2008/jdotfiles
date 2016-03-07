@@ -111,15 +111,15 @@ git submodule update --init --recursive
 
 # Install pip
 # Don't forget to install required packages.
-sudo easy_install pip
-sudo easy_install pip3
+# sudo easy_install pip
+# sudo easy_install pip3
 
 # Copy over ssh credentials from GoogleDrive
-cp ~/GoogleDrive/SHARED/SETTINGS/ssh_laptop/* ~/.ssh
+# cp ~/GoogleDrive/SHARED/SETTINGS/ssh_laptop/* ~/.ssh
 
 # Install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Brew Installs
-brew install vim
-brew install homebrew/dupes/screen
+# brew install vim
+# brew install homebrew/dupes/screen
