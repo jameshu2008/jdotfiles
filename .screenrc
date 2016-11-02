@@ -9,7 +9,7 @@
 # defbce "on"
 
 hardstatus alwayslastline '%{= kG}[ %{G}%H | %{=kw}%?%-Lw%?%{g}%n*%f%t%?(%u)%? %{g}]%{w}%?%+Lw%?%?%=%{g}[ %{K}%l %{g}][ %{B}%Y-%m-%d %{W    }%c %{g}]'
-defscrollback 1000000
+defscrollback 100000
 startup_message off
 autodetach on
 # escape ^Zz    # Save Ctrl-A for bash
