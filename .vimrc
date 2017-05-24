@@ -7,8 +7,35 @@
 " => Call the pathogen plugin (for managing the installation of other plugins,
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " very Important to install this first before installing any other plugins!!!)
-" let g:pathogen_disabled=[]
-" call add(g:pathogen_disabled, 'ctrlp')
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'YouCompleteMe')
+call add(g:pathogen_disabled, 'emmet')
+call add(g:pathogen_disabled, 'fugitive')
+call add(g:pathogen_disabled, 'gundo')
+call add(g:pathogen_disabled, 'indent-guides')
+call add(g:pathogen_disabled, 'snipmate')
+call add(g:pathogen_disabled, 'snipmate_snippets')
+call add(g:pathogen_disabled, 'snipmate_tlib_vim')
+call add(g:pathogen_disabled, 'snipmate_vim')
+call add(g:pathogen_disabled, 'snipmate_vim')
+call add(g:pathogen_disabled, 'surround')
+call add(g:pathogen_disabled, 'theme_molokai')
+call add(g:pathogen_disabled, 'syntastic')
+
+" if !has('gui_running')
+"     call add(g:pathogen_disabled, 'csscolor')
+" endif
+"
+" " Gundo requires at least vim 7.3
+" if v:version < '703' || !has('python')
+"     call add(g:pathogen_disabled, 'gundo')
+" endif
+"
+" if v:version < '702'
+"     call add(g:pathogen_disabled, 'autocomplpop')
+"     call add(g:pathogen_disabled, 'fuzzyfinder')
+"     call add(g:pathogen_disabled, 'l9')
+" endif
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#surround(expand('~/jdotfiles/.vim/bundles/{}'))
@@ -424,7 +451,7 @@ map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>p :setlocal paste!<cr>
-set pastetoggle=<F2>
+set pastetoggle=<leader>v
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional

@@ -75,6 +75,7 @@ alias fgrep='fgrep'
 # Listing
 alias ls='ls -G'
 alias ll='ls -laG'
+alias llt='ls -laGt | head -n 20'
 alias l.='ls -dG .*'
 
 # SU (access)
