@@ -35,19 +35,19 @@
 
 # General Commands
 alias c='clear'
+alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
 alias diff='colordiff'
-alias h='history'
+alias h='history | tail -n 15'
 alias hgrep='history | grep'
 alias j='jobs -l'
 alias mkdir='mkdir -pv'
 alias mount='mount |column -t'
 alias path='echo -e ${PATH//:/\\n}'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias ports='netstat -tulanp'
 alias rcb='R CMD BATCH'
 alias wget='wget -c'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
 
 # Navigational
 alias ~='cd ~'

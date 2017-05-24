@@ -37,9 +37,10 @@
   export PATH=$HOME/bin:$PATH
 
 # Default to VI Key Mapping in Terminal
-  # export EDITOR=vi
-  export EDITOR="rmate -w"
-  export P4EDITOR="rmate -w"
+  export EDITOR=vi
+  export P4EDITOR=vi
+  # export EDITOR="rmate -w"
+  # export P4EDITOR="rmate -w"
   set -o vi
 
 # Color settings
