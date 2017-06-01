@@ -123,3 +123,6 @@ git submodule update --init --recursive
 # Brew Installs
 # brew install vim
 # brew install homebrew/dupes/screen
+
+# Create ssh ControlPath dir
+mkdir ~/.ssh/ControlPath
