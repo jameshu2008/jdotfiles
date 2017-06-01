@@ -451,7 +451,7 @@ map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>p :setlocal paste!<cr>
-set pastetoggle=<leader>v
+set pastetoggle=<leader><leader>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional
