@@ -105,10 +105,6 @@ fi
 # Source bash
 bash
 
-# Populate vim plugins, as described jdotfiles/.gitmodules.
-jdot
-git submodule update --init --recursive
-
 # Install pip
 # Don't forget to install required packages.
 # sudo easy_install pip
