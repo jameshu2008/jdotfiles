@@ -9,18 +9,6 @@
 " very Important to install this first before installing any other plugins!!!)
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'YouCompleteMe')
-call add(g:pathogen_disabled, 'emmet')
-call add(g:pathogen_disabled, 'fugitive')
-call add(g:pathogen_disabled, 'gundo')
-call add(g:pathogen_disabled, 'indent-guides')
-call add(g:pathogen_disabled, 'snipmate')
-call add(g:pathogen_disabled, 'snipmate_snippets')
-call add(g:pathogen_disabled, 'snipmate_tlib_vim')
-call add(g:pathogen_disabled, 'snipmate_vim')
-call add(g:pathogen_disabled, 'snipmate_vim')
-call add(g:pathogen_disabled, 'surround')
-call add(g:pathogen_disabled, 'theme_molokai')
-call add(g:pathogen_disabled, 'syntastic')
 
 " if !has('gui_running')
 "     call add(g:pathogen_disabled, 'csscolor')
