@@ -11,14 +11,14 @@ Remove any old dotfiles in the ~ directory and sym-link everything to
 jdotifles.
 ```
 cd ~/jdotfiles
-bash bash-osx-InitialSetup.sh
+bash initial_install.sh
 ```
 
 ### STEP 3
 Download and refresh vim plugins.
 ```
 cd ~/jdotfiles
-git submodule update --init --recursive
+bash install_vim_plugins.sh
 ```
 
 ### SSH Access to GitHub
