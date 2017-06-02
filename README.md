@@ -3,7 +3,6 @@ Clone the jdotfiles repo.
 ```
 cd ~
 git clone git@github.com:jameshu2008/jdotfiles.git
-
 ```
 
 ### STEP 2
