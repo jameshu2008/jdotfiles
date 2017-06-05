@@ -35,6 +35,7 @@
 
 # Add ~/bin
   export PATH=$HOME/bin:$PATH
+  export PATH=/home/jameshu/.npm-global-packages/bin:$PATH
 
 # Default to VI Key Mapping in Terminal
   export EDITOR=vi
