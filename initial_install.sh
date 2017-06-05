@@ -6,7 +6,7 @@
 
 # Remove all the existing symlinks.
 rm -ir ~/.bash*
-rm -ir ~/.vim*
+# rm -ir ~/.vim*
 rm -ir ~/.inputrc
 rm -ir ~/.screenrc
 rm -ir ~/.tmux*
@@ -32,13 +32,13 @@ else
 fi
 
 # Creating symbolic links for vim
-if [ -d ~/jdotfiles/.vim ];
-then
-    ln -s ~/jdotfiles/.vim/ ~/.vim
-    echo "~/.vim soft-linked successfully"
-else
-    echo "~/.vim soft-linked unsuccessfully"
-fi
+# if [ -d ~/jdotfiles/.vim ];
+# then
+#     ln -s ~/jdotfiles/.vim/ ~/.vim
+#     echo "~/.vim soft-linked successfully"
+# else
+#     echo "~/.vim soft-linked unsuccessfully"
+# fi
 
 if [ -f ~/jdotfiles/.vimrc ];
 then
@@ -122,3 +122,4 @@ bash
 
 # Create ssh ControlPath dir
 mkdir ~/.ssh/ControlPath
+

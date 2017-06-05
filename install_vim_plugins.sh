@@ -1,3 +1,13 @@
+# Install pathogen.vim
+if [ -f ~/.vim ];
+then
+    echo "~/.vim/ already exist. "
+else
+    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo "~/.vim/ created."
+fi
+
 # Clone plugins
 rm -rf ~/jdotfiles/.vim/bundle/*
 mkdir -p ~/jdotfiles/.vim/bundle
