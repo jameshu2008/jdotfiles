@@ -14,7 +14,7 @@ bash initial_install.sh
 ```
 
 ### STEP 3
-Download and refresh vim plugins.
+Install vim plugins.
 ```
 cd ~/jdotfiles
 bash install_vim_plugins.sh
