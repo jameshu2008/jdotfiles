@@ -1,17 +1,16 @@
 # Install pathogen.vim
-if [ -f ~/.vim ];
+if [ -d ~/.vim ];
 then
     echo "~/.vim/ already exist. "
 else
-    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/bundle
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     echo "~/.vim/ created."
 fi
 
 # Clone plugins
-rm -rf ~/jdotfiles/.vim/bundle/*
-mkdir -p ~/jdotfiles/.vim/bundle
-cd ~/jdotfiles/.vim/bundle
+rm -rf ~/.vim/bundle/*
+cd ~/.vim/bundle
 
 # Essentials
 git clone https://github.com/Raimondi/delimitMate.git
@@ -49,6 +48,5 @@ git clone https://github.com/leafgarland/typescript-vim.git
 # git clone https://github.com/tpope/vim-fugitive.git
 
 # Update the plugins
-cd ~/jdotfiles/
-git submodule update --init --recursive
-
+# cd ~/jdotfiles
+# git submodule update --init --recursive
