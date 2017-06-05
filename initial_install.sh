@@ -69,7 +69,10 @@ fi
 # Creating symbolic links for ssh config
 if [ -f ~/jdotfiles/.ssh/config ];
 then
+    mkdir -p ~/.ssh/ControlPath
     ln -s ~/jdotfiles/.ssh/config ~/.ssh/config
+    chown $USER ~/.ssh/config
+    chmod 644 ~/.ssh/config
     echo "~/.ssh/config soft-linked successfully"
 else
     echo "~/.ssh/config soft-linked unsuccessfully"
@@ -120,5 +123,3 @@ bash
 # brew install vim
 # brew install homebrew/dupes/screen
 
-# Create ssh ControlPath dir
-mkdir -p ~/.ssh/ControlPath
