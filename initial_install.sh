@@ -121,5 +121,4 @@ bash
 # brew install homebrew/dupes/screen
 
 # Create ssh ControlPath dir
-mkdir ~/.ssh/ControlPath
-
+mkdir -p ~/.ssh/ControlPath
