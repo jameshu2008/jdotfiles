@@ -48,8 +48,8 @@ set nocompatible
 set history=10000
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
+" filetype plugin on
+" filetype indent on
 syntax on
 
 " default to python3
@@ -255,10 +255,10 @@ set ffs=unix,dos,mac
 " => Tab, indent, and text-wrap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Auto indent
-set autoindent
+" set autoindent
 
 "Smart indent, does not-so-smart things with certain keywords
-set smartindent
+" set smartindent
 
 " Use spaces instead of tabs, ALWAYS use this
 set expandtab

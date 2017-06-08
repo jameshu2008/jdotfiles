@@ -27,10 +27,11 @@ git clone https://github.com/vim-airline/vim-airline-themes.git
 git clone https://github.com/flazz/vim-colorschemes.git
 git clone https://github.com/altercation/vim-colors-solarized.git
 
+# Language-specific
 git clone https://github.com/pangloss/vim-javascript
 git clone https://github.com/leafgarland/typescript-vim.git
 
-# Good but disabled.
+# Good but not needed
 # git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
 # git clone https://github.com/airblade/typescript-vim.git
 # git clone https://github.com/chriskempson/tomorrow-theme.git
