@@ -1,16 +1,23 @@
 # Install pathogen.vim
-if [ -d ~/.vim ];
-then
-    echo "~/.vim/ already exist. "
-else
-    mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/bundle
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    echo "~/.vim/ created."
-fi
+# if [ -d ~/.vim ];
+# then
+#     echo "~/.vim/ already exist. "
+# else
+#     mkdir -p ~/.vim/autoload ~/.vim/bundle
+#     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#     echo "~/.vim/ created."
+# fi
 
-# Clone plugins
-rm -rf ~/.vim/bundle/*
+# Remove existing plugins
+rm -rf ~/.vim/
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+echo "~/.vim/ created."
+
 cd ~/.vim/bundle
+
+# Experimental
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
 
 # Essentials
 git clone https://github.com/Raimondi/delimitMate.git
