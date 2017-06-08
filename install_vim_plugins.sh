@@ -9,8 +9,9 @@
 # fi
 
 # Remove existing plugins
-rm -rf ~/.vim/
-mkdir -p ~/.vim/autoload ~/.vim/bundle
+rm -rf ~/.vim
+mkdir -pv ~/.vim/autoload
+mkdir -pv ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 echo "~/.vim/ created."
 
