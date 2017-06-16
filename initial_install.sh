@@ -5,14 +5,14 @@
 # configured. The folder name must be "GoogleDrive" with NO space.
 
 # Remove all the existing symlinks.
-rm -ir ~/.bash*
+# rm -ir ~/.bash*
 # rm -ir ~/.vim*
-rm -ir ~/.inputrc
-rm -ir ~/.screenrc
-rm -ir ~/.tmux*
-rm -if ~/.ssh/config
-rm -if ~/.gitconfig
-rm -if ~/.gitignore_global
+# rm -ir ~/.inputrc
+# rm -ir ~/.screenrc
+# rm -ir ~/.tmux*
+# rm -if ~/.ssh/config
+# rm -if ~/.gitconfig
+# rm -if ~/.gitignore_global
 
 # Creating symbolic links for bash
 if [ -f ~/jdotfiles/.bashrc ];

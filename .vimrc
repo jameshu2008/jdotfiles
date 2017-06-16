@@ -48,9 +48,9 @@ set nocompatible
 set history=10000
 
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
-syntax on
+" filetype plugin on
+" filetype indent on
+" syntax on
 
 " default to python3
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
@@ -254,11 +254,12 @@ set ffs=unix,dos,mac
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab, indent, and text-wrap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Auto indent
+" Auto indent
 set autoindent
 
 "Smart indent, does not-so-smart things with certain keywords
 set smartindent
+" set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " Use spaces instead of tabs, ALWAYS use this
 set expandtab
@@ -438,8 +439,8 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-map <leader>p :setlocal paste!<cr>
-set pastetoggle=<leader><leader>
+" map <leader>p :setlocal paste!<cr>
+set pastetoggle=<F2>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional
@@ -452,8 +453,6 @@ map <leader>t za
 " More syntax highlighting.
 let python_highlight_all = 1
 
-" Smart indenting
-" set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 " set ofu=syntaxcomplete#Complete
