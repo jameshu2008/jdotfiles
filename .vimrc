@@ -10,23 +10,10 @@
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'YouCompleteMe')
 
-" if !has('gui_running')
-"     call add(g:pathogen_disabled, 'csscolor')
-" endif
-"
-" " Gundo requires at least vim 7.3
-" if v:version < '703' || !has('python')
-"     call add(g:pathogen_disabled, 'gundo')
-" endif
-"
-" if v:version < '702'
-"     call add(g:pathogen_disabled, 'autocomplpop')
-"     call add(g:pathogen_disabled, 'fuzzyfinder')
-"     call add(g:pathogen_disabled, 'l9')
-" endif
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#surround(expand('~/jdotfiles/.vim/bundles/{}'))
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Google Stuff
@@ -34,9 +21,7 @@ call pathogen#surround(expand('~/jdotfiles/.vim/bundles/{}'))
 if filereadable(glob("~/GoogleDrive/gdotfiles/.vimrc"))
   source ~/GoogleDrive/gdotfiles/.vimrc
 endif
-" if filereadable(glob("/usr/share/vim/google/google.vim"))
-"   source /usr/share/vim/google/google.vim
-" endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -48,9 +33,9 @@ set nocompatible
 set history=10000
 
 " Enable filetype plugins
-" filetype plugin on
-" filetype indent on
-" syntax on
+filetype plugin on
+filetype indent on
+syntax on
 
 " default to python3
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
@@ -68,22 +53,19 @@ set autoread
 "let mapleader = ","
 let mapleader = "\<space>"
 
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
 " Remove/reduce the lag in VIM & TMUX
 " set ttyfast
-
-" Change the trigger for vim-snipmate
-" imap <C-\> <Plug>snipMateNextOrTrigger
-" smap <C-\> <Plug>snipMateNextOrTrigger
 
 " Auto reload/resource .vimrc after each write/sav
 autocmd! bufwritepost .vimrc source %
 
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " no more netrwhist
 :let g:netrw_dirhistmax = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -100,11 +82,6 @@ set wildignore=*.o,*~,*.pyc
 
 "Always show current position
 set ruler
-
-" Show partial commands in the last line of the screen
-" set showcmd
-" Height of the command bar
-" set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -152,6 +129,8 @@ set number
 " dialogue asking if you wish to save changed files.
 set confirm
 
+" have the visual selection autiomatically copied to the clipboard.
+set go+=a
 
 " Copy to system clipboard
 if has('unix')
@@ -163,13 +142,6 @@ if has('unix')
   endif
 endif
 
-" if $TMUX == ''
-  " set clipboard=unnamed " For Mac OSX
-  " set clipboard=unnamedplus " For Ubuntu
-" endif
-
-" have the visual selection autiomatically copied to the clipboard.
-set go+=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -183,61 +155,32 @@ if has("gui_running")
     set guioptions-=T "remove toolbar
     set guioptions+=e "no non-gui line tab?
     set guitablabel=%M\ %t
-    " let g:molokai_original=1
-    " let g:rehash256=1
+    let g:rehash256=1
     " let g:solarized_termcolors=256
     " let g:solarized_termtrans=1
     colorscheme solarized
-" Powerline specific stuff
     set laststatus=2
     set guifont=Source\ Code\ Pro\ for\ Powerline
-    let g:airline_theme='raven'
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#branch#enabled=1
-    let g:airline#extensions#syntastic#enabled=1
-    if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
-    endif
-    let g:airline_symbols.space = "\ua0"
-    " let g:airline_left_sep          = '>'
-    " let g:airline_left_alt_sep      = '>'
-    " let g:airline_right_sep         = '<'
-    " let g:airline_right_alt_sep     = '<'
-    " let g:airline_branch_prefix     = '|'
-    " let g:airline_readonly_symbol   = '|'
-    " let g:airline_linecolumn_prefix = '|'
 else
     set background=dark
-    " let g:molokai_original=1
-    " let g:rehash256=1
+    let g:rehash256=1
     let g:solarized_termcolors=256
     let g:solarized_degrade=0
     let g:solarized_termtrans=1
     colorscheme solarized
-    " hi IndentGuidesOdd  ctermbg=black
-    " hi IndentGuidesEven ctermbg=darkgrey
-    " hi IndentGuidesOdd  ctermbg=white " For light background
-    " hi IndentGuidesEven ctermbg=lightgrey " For light background
-" Powerline specific stuff
+    " Powerline specific stuff
     set laststatus=2
     set guifont=Source\ Code\ Pro\ for\ Powerline
-    let g:airline_theme='raven'
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#branch#enabled=1
-    let g:airline#extensions#syntastic#enabled=1
-    if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
-    endif
-    " let g:airline_symbols.space = "\ua0"
-    " let g:airline_left_sep          = '>'
-    " let g:airline_left_alt_sep      = '>'
-    " let g:airline_right_sep         = '<'
-    " let g:airline_right_alt_sep     = '<'
-    " let g:airline_branch_prefix     = '|'
-    " let g:airline_readonly_symbol   = '|'
-    " let g:airline_linecolumn_prefix = '|'
+endif
+
+" Airline settings.
+let g:airline_theme='raven'
+" let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
+" let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
 endif
 
 
@@ -301,12 +244,9 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 map j gj
 map k gk
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-" map <space> /
-" map <c-space> ?
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader>c :noh<cr>
+nnoremap <C-L> :nohl<CR><C-L>
 
 " Smart way to move between windows
 nnoremap <C-J> <C-W><C-J>
@@ -318,18 +258,17 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" Close the current buffer
-" map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-" map <leader>ba :1,1000 bd!<cr>
-
 " Move next and previous in buffers
 nnoremap gn :bn<cr>
 nnoremap gp :bp<cr>
 
 " Close buffer
 nnoremap gd :bd<cr>
+" Close all the buffers
+" map <leader>ba :1,1000 bd!<cr>
+
+" Quickly open a buffer for scribble.
+map <leader>q :e ~/buffer<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -360,74 +299,16 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-" nmap <M-j> mz:m+<cr>`z
-" nmap <M-k> mz:m-2<cr>`z
-" vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-" vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" if has("mac") || has("macunix")
-"   nmap <D-j> <M-j>
-"   nmap <D-k> <M-k>
-"   vmap <D-j> <M-j>
-"   vmap <D-k> <M-k>
-" endif
-
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy
 map Y y$
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the next search
-" nnoremap <C-L> :nohl<CR><C-L>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimgrep searching and cope displaying
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you vimgrep after the selected text
-"vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
-" Open vimgrep and put the cursor in the right position
-"map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-" map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
-
-" When you press <leader>r you can search and replace the selected text
-" vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with vimgrep, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-" map <leader>cc :botright cope<cr>
-" map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-" map <leader>n :cn<cr>
-" map <leader>p :cp<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-" map <leader>sn ]s
-" map <leader>sp [s
-" map <leader>sa zg
-" map <leader>s? z=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
@@ -435,12 +316,10 @@ map Y y$
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
-
 " Toggle paste mode on and off
 " map <leader>p :setlocal paste!<cr>
 set pastetoggle=<F2>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional
@@ -453,19 +332,8 @@ map <leader>t za
 " More syntax highlighting.
 let python_highlight_all = 1
 
-
-" Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
-" set ofu=syntaxcomplete#Complete
-
 " Remove trailing whitespace whenever :w command is executed
 autocmd BufWritePre * :%s/\s\+$//e
-
-" For handling trailing whitespaces
-" command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
-" command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
-" nnoremap <F12>     :ShowSpaces 1<CR>
-" nnoremap <S-F12>   m`:TrimSpaces<CR>``
-" vnoremap <S-F12>   :TrimSpaces<CR>
 
 " When you’re pressing Escape to leave insert mode in the terminal, it will by
 " default take a second or another keystroke to leave insert mode completely
@@ -497,6 +365,7 @@ vnoremap <silent> <Leader>is :<C-U>let old_reg_a=@a<CR>
  \:let @a=old_reg_a<CR>
  \:let @"=old_reg<CR>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -511,7 +380,6 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git5_specs
       \ --ignore review
       \ -g ""'
-
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " NerdTree
@@ -522,6 +390,7 @@ nmap <leader>; :TagbarToggle<CR>
 
 " Syntastic
 let g:syntastic_python_checkers = ['gpylint']
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -552,49 +421,3 @@ function! VisualSelection(direction) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
-" Returns true if paste mode is enabled
-" function! HasPaste()
-"     if &paste
-"         return 'PASTE MODE  '
-"     en
-"     return ''
-" endfunction
-
-" Don't close window, when deleting a buffer
-" command! Bclose call <SID>BufcloseCloseIt()
-" function! <SID>BufcloseCloseIt()
-"    let l:currentBufNum = bufnr("%")
-"    let l:alternateBufNum = bufnr("#")
-"
-"    if buflisted(l:alternateBufNum)
-"      buffer #
-"    else
-"      bnext
-"    endif
-"
-"    if bufnr("%") == l:currentBufNum
-"      new
-"    endif
-"
-"    if buflisted(l:currentBufNum)
-"      execute("bdelete! ".l:currentBufNum)
-"    endif
-" endfunction
-
-" function ShowSpaces(...)
-"   let @/='\v(\s+$)|( +\ze\t)'
-"   let oldhlsearch=&hlsearch
-"   if !a:0
-"     let &hlsearch=!&hlsearch
-"   else
-"     let &hlsearch=a:1
-"   end
-"   return oldhlsearch
-" endfunction
-"
-" function TrimSpaces() range
-"   let oldhlsearch=ShowSpaces(1)
-"   execute a:firstline.",".a:lastline."substitute ///gec"
-"   let &hlsearch=oldhlsearch
-" endfunction
