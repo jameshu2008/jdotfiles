@@ -7,15 +7,15 @@
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
   if [ -f ~/.bash_vars_aliases ]; then
-      . ~/.bash_variables
-  fi
-
-  if [ -f ~/.inputrc ]; then
-      . ~/.inputrc
+      . ~/.bash_vars_aliases
   fi
 
   if [ -f ~/GoogleDrive/gdotfiles/.bashrc ]; then
       . ~/GoogleDrive/gdotfiles/.bashrc
+  fi
+
+  if [ -f ~/.inputrc ]; then
+      . ~/.inputrc
   fi
 
 # enable programmable completion features (you don't need to enable

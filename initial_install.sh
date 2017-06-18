@@ -125,6 +125,7 @@ then
 else
   echo "Could not install vim plugins :()"
 fi
+fi
 
 # Source bash
 bash
