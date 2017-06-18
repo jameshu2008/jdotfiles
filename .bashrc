@@ -6,16 +6,16 @@
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-  if [ -f ~/jdotfiles/.bash_aliases ]; then
-      . ~/jdotfiles/.bash_aliases
+  if [ -f ~/.bash_aliases ]; then
+      . ~/.bash_aliases
   fi
 
-  if [ -f ~/jdotfiles/.bash_variables ]; then
-      . ~/jdotfiles/.bash_variables
+  if [ -f ~/.bash_vars_aliases ]; then
+      . ~/.bash_variables
   fi
 
-  if [ -f ~/jdotfiles/.inputrc ]; then
-      . ~/jdotfiles/.inputrc
+  if [ -f ~/.inputrc ]; then
+      . ~/.inputrc
   fi
 
   if [ -f ~/GoogleDrive/gdotfiles/.bashrc ]; then
@@ -43,6 +43,9 @@
   # export EDITOR="rmate -w"
   # export P4EDITOR="rmate -w"
   set -o vi
+
+# Disabling Beeping.
+setterm -blength 0
 
 # Color settings
   export TERM=screen-256color

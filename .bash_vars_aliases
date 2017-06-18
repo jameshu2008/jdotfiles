@@ -1,3 +1,26 @@
+###########################################################
+# Variables
+###########################################################
+
+# Google Drive Directories
+export gddev=~/GoogleDrive/DEV
+
+# Google Drive SHARED Directories
+export gds=~/GoogleDrive/SHARED
+export gdsbin=~/GoogleDrive/SHARED/bin
+export gdsdotfiles=~/GoogleDrive/SHARED/dotfiles
+export gdsnotes=~/GoogleDrive/SHARED/NOTES
+export gdsproject=~/GoogleDrive/SHARED/PROJECT
+export gdssandbox=~/GoogleDrive/SHARED/SANDBOX
+export gdssandboxpython=~/GoogleDrive/SHARED/SANDBOX/python
+export gdslib=~/GoogleDrive/SHARED/LIB
+
+export jdotfiles=~/jdotfiles
+
+###########################################################
+# Aliases
+###########################################################
+
 # Personal .bash_aliases, no work-related stuff in here.
 
 # Critical
@@ -123,7 +146,6 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%y"'
-
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
