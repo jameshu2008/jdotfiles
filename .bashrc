@@ -41,7 +41,7 @@
   set -o vi
 
 # Disabling Beeping.
-setterm -blength 0
+# setterm -blength 0
 
 # Color settings
   export TERM=screen-256color
