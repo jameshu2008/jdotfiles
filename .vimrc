@@ -3,6 +3,7 @@
 " 2013/04/28
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Call the pathogen plugin (for managing the installation of other plugins,
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -30,12 +31,7 @@ endif
 set nocompatible
 
 " Sets how many lines of history VIM has to remember
-set history=10000
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-syntax on
+set history=5000
 
 " default to python3
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
@@ -47,11 +43,6 @@ autocmd BufRead,BufNewFile *.less set syntax=css
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-"let mapleader = ","
-let mapleader = "\<space>"
 
 " Remove/reduce the lag in VIM & TMUX
 " set ttyfast
@@ -66,9 +57,51 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " no more netrwhist
 :let g:netrw_dirhistmax = 0
 
+" Copy to system clipboard
+if has('unix')
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    set clipboard=unnamed " For Mac OSX
+  else
+    set clipboard=unnamedplus
+  endif
+endif
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+syntax on
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Specify the behavior when switching between buffers
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
+" => VIM Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -132,22 +165,13 @@ set confirm
 " have the visual selection autiomatically copied to the clipboard.
 set go+=a
 
-" Copy to system clipboard
-if has('unix')
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin\n"
-    set clipboard=unnamed " For Mac OSX
-  else
-    set clipboard=unnamedplus
-  endif
-endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
+" => Visuals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+let python_highlight_all = 1
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -183,15 +207,12 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" Folding options
+set foldmethod=indent
+set foldlevel=99
+set foldignore=
+map <leader>t za
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Encodings & Filetype
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,24 +238,6 @@ set nowrap
 set textwidth=78
 set formatoptions=cq
 set wrapmargin=0
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
-
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -278,43 +281,26 @@ map <leader>tm :tabmove
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
-" map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers
-try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
-catch
-endtry
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" Remember info about open buffers on close
-set viminfo^=%
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
+" => Custom Key Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+" let mapleader = ","
+
+let mapleader = "\<space>"
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy
 map Y y$
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
 " map <leader>p :setlocal paste!<cr>
@@ -324,13 +310,6 @@ set pastetoggle=<F2>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=indent
-set foldlevel=99
-set foldignore=
-map <leader>t za
-
-" More syntax highlighting.
-let python_highlight_all = 1
 
 " Remove trailing whitespace whenever :w command is executed
 autocmd BufWritePre * :%s/\s\+$//e
@@ -355,6 +334,70 @@ else
     augroup END
 endif
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin Configurations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP
+  set runtimepath^=~/.vim/bundle/ctrlp.vim
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ --ignore "**/*.pyc"
+        \ --ignore .git5_specs
+        \ --ignore review
+        \ -g ""'
+  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" NerdTree
+  nmap <leader>a :NERDTreeToggle<CR>
+
+" Tagbar
+  nmap <leader>; :TagbarToggle<CR>
+
+" Syntastic
+  let g:syntastic_python_checkers = ['gpylint']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Custom Functions/Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+  " Mappings
+  vnoremap <silent> * :call VisualSelection('f')<CR>
+  vnoremap <silent> # :call VisualSelection('b')<CR>
+
+  " Helper Function.
+  function! CmdLine(str)
+      exe "menu Foo.Bar :" . a:str
+      emenu Foo.Bar
+      unmenu Foo
+  endfunction
+
+  " Helper Function.
+  function! VisualSelection(direction) range
+      let l:saved_reg = @"
+      execute "normal! vgvy"
+
+      let l:pattern = escape(@", '\\/.*$^~[]')
+      let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+      if a:direction == 'b'
+          execute "normal ?" . l:pattern . "^M"
+      elseif a:direction == 'gv'
+          call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+      elseif a:direction == 'replace'
+          call CmdLine("%s" . '/'. l:pattern . '/')
+      elseif a:direction == 'f'
+          execute "normal /" . l:pattern . "^M"
+      endif
+
+      let @/ = l:pattern
+      let @" = l:saved_reg
+  endfunction
+
 " Reverse Letters (from vim.org)
 vnoremap <silent> <Leader>is :<C-U>let old_reg_a=@a<CR>
  \:let old_reg=@"<CR>
@@ -364,60 +407,3 @@ vnoremap <silent> <Leader>is :<C-U>let old_reg_a=@a<CR>
  \gvc<C-R>a<Esc>
  \:let @a=old_reg_a<CR>
  \:let @"=old_reg<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin Configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ --ignore .git5_specs
-      \ --ignore review
-      \ -g ""'
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-
-" NerdTree
-nmap <leader>a :NERDTreeToggle<CR>
-
-" Tagbar
-nmap <leader>; :TagbarToggle<CR>
-
-" Syntastic
-let g:syntastic_python_checkers = ['gpylint']
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
