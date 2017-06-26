@@ -10,6 +10,10 @@
       . ~/.bash_vars_aliases
   fi
 
+  if [ -f ~/.bashrc_original_backup ]; then
+      . ~/.bashrc_original_backup
+  fi
+
   if [ -f ~/GoogleDrive/gdotfiles/.bashrc ]; then
       . ~/GoogleDrive/gdotfiles/.bashrc
   fi

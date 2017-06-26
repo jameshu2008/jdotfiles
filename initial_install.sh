@@ -6,28 +6,37 @@
 
 # Remove all the existing symlinks.
 # rm -ir ~/.bash*
+# rm -if ~/.ssh/config
 rm -ir ~/.inputrc
 rm -ir ~/.screenrc
 rm -ir ~/.tmux*
-rm -if ~/.ssh/config
 rm -if ~/.gitconfig
 rm -if ~/.gitignore_global
+
+# Creating symbolic links for bash
+if [ -f ~/.bashrc ];
+then
+    mv ~/.bashrc ~/.bashrc_original_backup
+    echo "~/.bashrc backed up to ~/.bashrc_original_backup."
+else
+    echo "~/.bashrc cannot be backed up."
+fi
 
 # Creating symbolic links for bash
 if [ -f ~/jdotfiles/.bashrc ];
 then
     ln -s ~/jdotfiles/.bashrc ~/.bashrc
-    echo "~/.bashrc soft-linked successfully"
+    echo "~/.bashrc soft-linked successfully."
 else
-    echo "~/.bashrc soft-linked unsuccessfully"
+    echo "~/.bashrc soft-linked unsuccessfully."
 fi
 
 if [ -f ~/jdotfiles/.bash_vars_aliases ];
 then
     ln -s ~/jdotfiles/.bash_vars_aliases ~/.bash_vars_aliases
-    echo "~/.bashrc soft-linked successfully"
+    echo "~/.bash_vars_aliases soft-linked successfully"
 else
-    echo "~/.bashrc soft-linked unsuccessfully"
+    echo "~/.bash_vars_aliases soft-linked unsuccessfully"
 fi
 
 # if [ -f ~/jdotfiles/.bash_profile ];
@@ -47,6 +56,26 @@ fi
 #     echo "~/.vim soft-linked unsuccessfully"
 # fi
 
+# Creating symbolic links for ssh config
+# if [ -f ~/jdotfiles/.ssh/config ];
+# then
+#     mkdir -p ~/.ssh/ControlPath
+#     ln -s ~/jdotfiles/.ssh/config ~/.ssh/config
+#     chown $USER ~/.ssh/config
+#     chmod 644 ~/.ssh/config
+#     echo "~/.ssh/config soft-linked successfully"
+# else
+#     echo "~/.ssh/config soft-linked unsuccessfully"
+# fi
+
+# Creating symbolic links for npm configs
+# if [ -f ~/jdotfiles/.npmrc ];
+# then
+#     ln -s ~/jdotfiles/.npmrc ~/.npmrc
+#     echo "~/.npmrc soft-linked successfully"
+# else
+#     echo "~/.npmrc soft-linked unsuccessfully"
+# fi
 
 # Creating symbolic links for inputrc
 if [ -f ~/jdotfiles/.inputrc ];
@@ -66,17 +95,6 @@ else
     echo "~/.screenrc soft-linked unsuccessfully"
 fi
 
-# Creating symbolic links for ssh config
-if [ -f ~/jdotfiles/.ssh/config ];
-then
-    mkdir -p ~/.ssh/ControlPath
-    ln -s ~/jdotfiles/.ssh/config ~/.ssh/config
-    chown $USER ~/.ssh/config
-    chmod 644 ~/.ssh/config
-    echo "~/.ssh/config soft-linked successfully"
-else
-    echo "~/.ssh/config soft-linked unsuccessfully"
-fi
 
 # Creating symbolic links for git global ignores
 if [ -f ~/jdotfiles/.gitignore_global ];
@@ -96,35 +114,28 @@ else
     echo "~/.gitconfig soft-linked unsuccessfully"
 fi
 
-# Creating symbolic links for npm configs
-# if [ -f ~/jdotfiles/.npmrc ];
-# then
-#     ln -s ~/jdotfiles/.npmrc ~/.npmrc
-#     echo "~/.npmrc soft-linked successfully"
-# else
-#     echo "~/.npmrc soft-linked unsuccessfully"
-# fi
 
 read -p "Re-link vimrc and install all vim plugins? " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-# Link vimrc.
-if [ -f ~/jdotfiles/.vimrc ];
-then
-    ln -s ~/jdotfiles/.vimrc ~/.vimrc
-    echo "~/.vimrc soft-linked successfully"
-else
-    echo "~/.vimrc soft-linked unsuccessfully"
-fi
-# Install vim plugins.
-if [ -f ~/jdotfiles/.install_vim_plugins.sh ];
-then
-  source ~/jdotfiles/install_vim_plugins.sh
-  echo "Vim Plugins installed successfully!"
-else
-  echo "Could not install vim plugins :()"
-fi
+  # Link vimrc.
+  if [ -f ~/jdotfiles/.vimrc ];
+  then
+      ln -s ~/jdotfiles/.vimrc ~/.vimrc
+      echo "~/.vimrc soft-linked successfully"
+  else
+      echo "~/.vimrc soft-linked unsuccessfully"
+  fi
+
+  # Install vim plugins.
+  if [ -f ~/jdotfiles/.install_vim_plugins.sh ];
+  then
+    source ~/jdotfiles/install_vim_plugins.sh
+    echo "Vim Plugins installed successfully!"
+  else
+    echo "Could not install vim plugins :()"
+  fi
 fi
 
 # Source bash
