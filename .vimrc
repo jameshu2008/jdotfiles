@@ -151,6 +151,7 @@ set mat=2
 set noerrorbells
 set novisualbell
 set vb t_vb=
+autocmd! GUIEnter * set vb t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
