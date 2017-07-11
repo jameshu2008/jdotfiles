@@ -150,7 +150,7 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
+set vb t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
