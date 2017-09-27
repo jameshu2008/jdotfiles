@@ -39,13 +39,13 @@ else
     echo "~/.bash_vars_aliases soft-linked unsuccessfully"
 fi
 
-# if [ -f ~/jdotfiles/.bash_profile ];
-# then
-#     ln -s ~/jdotfiles/.bash_profile ~/.bash_profile
-#     echo "~/.bash_profile soft-linked successfully"
-# else
-#     echo "~/.bash_profile soft-linked unsuccessfully"
-# fi
+if [ -f ~/jdotfiles/.bash_profile ];
+then
+    ln -s ~/jdotfiles/.bash_profile ~/.bash_profile
+    echo "~/.bash_profile soft-linked successfully"
+else
+    echo "~/.bash_profile soft-linked unsuccessfully"
+fi
 
 # Creating symbolic links for vim
 # if [ -d ~/jdotfiles/.vim ];
