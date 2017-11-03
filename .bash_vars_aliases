@@ -1,47 +1,45 @@
 ###########################################################
-# Variables
+# GoogleDrive
 ###########################################################
 
 # Google Drive Directories
-export gddev=~/GoogleDrive/DEV
+  export gddev=~/GoogleDrive/DEV
 
 # Google Drive SHARED Directories
-export gds=~/GoogleDrive/SHARED
-export gdsbin=~/GoogleDrive/SHARED/bin
-export gdsdotfiles=~/GoogleDrive/SHARED/dotfiles
-export gdsnotes=~/GoogleDrive/SHARED/NOTES
-export gdsproject=~/GoogleDrive/SHARED/PROJECT
-export gdssandbox=~/GoogleDrive/SHARED/SANDBOX
-export gdssandboxpython=~/GoogleDrive/SHARED/SANDBOX/python
-export gdslib=~/GoogleDrive/SHARED/LIB
+  export gds=~/GoogleDrive/SHARED
+  export gdsbin=~/GoogleDrive/SHARED/bin
+  export gdsdotfiles=~/GoogleDrive/SHARED/dotfiles
+  export gdslib=~/GoogleDrive/SHARED/LIB
+  export gdsnotes=~/GoogleDrive/SHARED/NOTES
+  export gdsproject=~/GoogleDrive/SHARED/PROJECT
+  export gdssandbox=~/GoogleDrive/SHARED/SANDBOX
+  export gdssandboxpython=~/GoogleDrive/SHARED/SANDBOX/python
 
-export jdotfiles=~/jdotfiles
+# My Shortcuts
+  alias gddev='cd "$gddev" && ll'
+  alias gdsbin='cd "$gdsbin" && ll'
+  alias gdsdotfiles='cd "$gdsdotfiles" && ll'
+  alias gdslib='cd "$gdslib" && ll'
+  alias gdsproject='cd "$gdsproject" && ll'
+
+  alias sandbox='cd "$gdssandbox" && ll'
+  alias shared='cd "$gds" && ll'
+
+  alias jnotes='cd "$gdsnotes" && ll'
+  alias takenote='cd "$gdsnotes" && vim'
+
+  alias jpy='cd "$gdssandboxpython" && ll'
+
+  alias jnote='cd ~/DEV && jupyter notebook'
 
 ###########################################################
-# Aliases
+# jdotfiles
 ###########################################################
+#
+# jdotfiles
+  export jdotfiles=~/jdotfiles
 
-# Personal .bash_aliases, no work-related stuff in here.
-
-# Critical
-  alias mv='mv -i'
-  alias rm='rm -ir'
-  alias rmr='rm -ir'
-
-# Mine
-  # Shorthands
-  alias shared='gds'
-  alias notes='gdsnotes'
-  alias takenote='gdsnotes && vim'
-  alias bin='gdsbin'
-  alias dev='gddev'
-  alias lib='gdslib'
-  alias sandbox='gdssandbox'
-  alias spy='cd "$gdssandboxpython" && ll'
-  alias queries='gdqueries'
-  alias script='gdscript'
-
-  # Edit dotfiles
+# Edit dotfiles
   alias jdot='cd "$jdotfiles" && ll'
   alias vbashrc='vim "$jdotfiles"/.bashrc'
   alias vbasha='vim "$jdotfiles"/.bash_aliases'
@@ -52,101 +50,95 @@ export jdotfiles=~/jdotfiles
   alias vgiti='vim "$jdotfiles"/.gitignore_global'
   alias vssh='vim "$jdotfiles"/.ssh/config'
 
-  # Productivity
+###########################################################
+# Unix Commands
+###########################################################
+
+# Personal .bash_aliases, no work-related stuff in here.
+
+# Critical
+  alias mv='mv -i'
+  alias rm='rm -ir'
+  alias rmr='rm -ir'
+
+# Productivity
   alias hgrep='history | grep'
   alias findgrep='find . -type f -print0 | xargs -0 grep'
 
 # General Commands
-alias c='clear'
-alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
-alias diff='colordiff'
-alias h='history | tail -n 15'
-alias hgrep='history | grep'
-alias j='jobs -l'
-alias mkdir='mkdir -pv'
-alias mount='mount |column -t'
-alias path='echo -e ${PATH//:/\\n}'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias ports='netstat -tulanp'
-alias rcb='R CMD BATCH'
-alias wget='wget -c'
+  alias c='clear'
+  alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
+  alias diff='colordiff'
+  alias h='history | tail -n 15'
+  alias hgrep='history | grep'
+  alias j='jobs -l'
+  alias mkdir='mkdir -pv'
+  alias mount='mount |column -t'
+  alias path='echo -e ${PATH//:/\\n}'
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+  alias ports='netstat -tulanp'
+  alias rcb='R CMD BATCH'
+  alias wget='wget -c'
 
 # Navigational
-alias ~='cd ~'
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../../'
-
-alias gddev='cd "$gddev" && ll'
-
-alias gds='cd "$gds" && ll'
-alias gdsbin='cd "$gdsbin" && ll'
-alias gdsdotfiles='cd "$gdsdotfiles" && ll'
-alias gdsnotes='cd "$gdsnotes" && ll'
-alias gdsproject='cd "$gdsproject" && ll'
-alias gdslib='cd "$gdslib" && ll'
-alias gdssandbox='cd "$gdssandbox" && ll'
-alias gdssandboxpython='cd "$gdssandboxpython" && ll'
+  alias ~='cd ~'
+  alias ..='cd ..'
+  alias ...='cd ../../../'
+  alias ....='cd ../../../../'
+  alias .....='cd ../../../../../'
 
 # GREP
-alias grep='grep'
-alias egrep='grep'
-alias fgrep='fgrep'
+  alias grep='grep'
+  alias egrep='grep'
+  alias fgrep='fgrep'
 
 # Listing
-alias ls='ls -G'
-alias ll='ls -laG'
-alias llt='ls -laGt | head -n 20'
-alias l.='ls -dG .*'
+  alias ls='ls -G'
+  alias ll='ls -laG'
+  alias llt='ls -laGt | head -n 20'
+  alias l.='ls -dG .*'
 
 # SU (access)
-alias su='sudo -i'
-alias root='sudo -i'
+  alias su='sudo -i'
+  alias root='sudo -i'
 
 # UPDATE (Debian Linux Server)
 # alias update='sudo apt-get update && sudo apt-get upgrade'
 
 # VIM
-if [[ "$OSTYPE" == "darwin"* ]]; then
+# if [[ "$OSTYPE" == "darwin"* ]]; then
     # alias mvim="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
     # alias vi="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
     # alias vim="reattach-to-user-namespace mvim -v" # CRITICAL, tmux stuff
     # alias mvim="mvim -v" # CRITICAL
     # alias vi="mvim -v" # CRITICAL
     # alias vim="mvim -v" # CRITICAL
-
-    alias vimb='cd ~/.vim/bundle'
-    alias vimruntime='cd /usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime'
-
-    alias vvimrc='vim ~/.vimrc'
-else
-    alias vimb='cd ~/.vim/bundle'
-
-    alias vvimrc='vim ~/.vimrc'
-fi
+# else
+# fi
+  alias vimb='cd ~/.vim/bundle'
+  alias vvimrc='vim ~/.vimrc'
 
 # Power Related
-alias reboot='sudo /sbin/reboot'
-alias poweroff='sudo /sbin/poweroff'
-alias halt='sudo /sbin/halt'
-alias shutdown='sudo /sbin/shutdown'
+  alias reboot='sudo /sbin/reboot'
+  alias poweroff='sudo /sbin/poweroff'
+  alias halt='sudo /sbin/halt'
+  alias shutdown='sudo /sbin/shutdown'
 
 # System Info
-alias meminfo='free -m -l -t'
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias pscpu='ps auxf | sort -nr -k 3'
-alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
-alias cpuinfo='lscpu'
-alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+  alias meminfo='free -m -l -t'
+  alias psmem='ps auxf | sort -nr -k 4'
+  alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+  alias pscpu='ps auxf | sort -nr -k 3'
+  alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+  alias cpuinfo='lscpu'
+  alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 # Time
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%y"'
+  alias now='date +"%T"'
+  alias nowtime=now
+  alias nowdate='date +"%d-%m-%y"'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
