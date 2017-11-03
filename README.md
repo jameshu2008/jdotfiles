@@ -9,14 +9,14 @@ git clone git@github.com:jameshu2008/jdotfiles.git
 Remove any old dotfiles in the ~ directory and sym-link everything to
 jdotifles.
 ```
-cd ~/jdotfiles
+cd ~/jdotfiles/bin
 bash initial_install.sh
 ```
 
 ### STEP 3
 Install vim plugins.
 ```
-cd ~/jdotfiles
+cd ~/jdotfiles/bin
 bash install_vim_plugins.sh
 ```
 
