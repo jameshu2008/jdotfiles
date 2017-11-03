@@ -15,6 +15,3 @@ source '/Users/James/google-cloud-sdk/completion.bash.inc'
 
 # Disabling Beeping.
 setterm -blength 0
-
-# Added by Anaconda3 4.4.0 installer
-export PATH="/Users/jameshu/anaconda3/bin:$PATH"
