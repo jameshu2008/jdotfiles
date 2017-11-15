@@ -10,10 +10,6 @@
       . ~/.bash_vars_aliases
   fi
 
-  if [ -f ~/.bashrc_original_backup ]; then
-      . ~/.bashrc_original_backup
-  fi
-
   if [ -f ~/GoogleDrive/gdotfiles/.bashrc ]; then
       . ~/GoogleDrive/gdotfiles/.bashrc
   fi
@@ -94,8 +90,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Node.js stuff
     export PATH="/usr/local/share/npm/bin:$PATH"
     export PATH="$NPM_PACKAGES/bin:$PATH"
+    export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
     export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-    # export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
     # Adding ~/GoogleDrive/SHARED/bin
     export PATH="$HOME/GoogleDrive/SHARED/bin:$PATH"
     # Adding /usr/local/sbin

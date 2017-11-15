@@ -14,15 +14,6 @@ rm -if ~/.gitconfig
 rm -if ~/.gitignore_global
 
 # Creating symbolic links for bash
-if [ -f ~/.bashrc ];
-then
-    mv ~/.bashrc ~/.bashrc_original_backup
-    echo "~/.bashrc backed up to ~/.bashrc_original_backup."
-else
-    echo "~/.bashrc cannot be backed up."
-fi
-
-# Creating symbolic links for bash
 if [ -f ~/jdotfiles/.bashrc ];
 then
     ln -s ~/jdotfiles/.bashrc ~/.bashrc
