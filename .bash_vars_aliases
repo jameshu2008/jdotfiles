@@ -30,7 +30,7 @@
 
   alias jpy='cd "$gdssandboxpython" && ll'
 
-  alias jnotebook='cd ~/DEV && jupyter notebook'
+  alias jnotebook='cd ~ && jupyter notebook'
 
   alias gitjdot='eval $(ssh-agent) && ssh-add ~/GoogleDrive/SHARED/SETTINGS/ssh_github/id_rsa'
 
