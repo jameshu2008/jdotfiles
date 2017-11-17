@@ -100,7 +100,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/usr/local/bin:$PATH"
     # Adding Anaconda path.
     export PATH="/Users/jameshu/anaconda3/bin:$PATH"
-    # Adding my bin path
+    # Adding jdotfiles bin path
     export PATH="~/jdotfiles/bin:$PATH"
 
   # Enable colored terminal for Mac OSX
