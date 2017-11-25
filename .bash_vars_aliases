@@ -30,9 +30,9 @@
 
   alias jpy='cd "$gdssandboxpython" && ll'
 
-  alias jnotebook='cd ~ && jupyter notebook'
+  alias jnote='jupyter notebook'
 
-  alias gitjdot='eval $(ssh-agent) && ssh-add ~/GoogleDrive/SHARED/SETTINGS/ssh_github/id_rsa'
+  alias gready='eval $(ssh-agent) && ssh-add ~/GoogleDrive/SHARED/SETTINGS/ssh_github/id_rsa'
 
 ###########################################################
 # jdotfiles
@@ -44,8 +44,7 @@
 # Edit dotfiles
   alias jdot='cd "$jdotfiles" && ll'
   alias vbashrc='vim "$jdotfiles"/.bashrc'
-  alias vbasha='vim "$jdotfiles"/.bash_aliases'
-  alias vbashv='vim "$jdotfiles"/.bash_variables'
+  alias vbashav='vim "$jdotfiles"/.bash_vars_aliases'
   alias vtmx='vim "$jdotfiles"/.tmux.conf'
   alias vgit='vim ./.git/config'
   alias vgitgc='vim "$jdotfiles"/.gitconfig'
