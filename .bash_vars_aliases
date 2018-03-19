@@ -33,7 +33,7 @@
   alias jdev='cd ~/DEV'
   alias jnote='cd ~/DEV && jupyter notebook'
 
-  alias gitready='eval $(ssh-agent) && ssh-add ~/GoogleDrive/SHARED/SETTINGS/ssh_github/id_rsa'
+  alias gitready='eval $(ssh-agent) && ssh-add -K ~/GoogleDrive/SHARED/SETTINGS/ssh_github/id_rsa'
 
 ###########################################################
 # jdotfiles
